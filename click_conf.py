@@ -9,7 +9,7 @@ def conf(*param_decls, **attrs):
     def decorator(f):
         def callback(ctx, param, value):
             if os.path.exists(value):
-                ctx.default_map = yaml.load(file(value))
+                ctx.default_map = yaml.load(open(value))
         attrs.setdefault('callback', callback)
         attrs.setdefault('is_eager', True)
         attrs.setdefault('type', str)
