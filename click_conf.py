@@ -17,5 +17,5 @@ def conf(*param_decls, **attrs):
         attrs.setdefault('help', 'Load default configuration file from {default}'.format(**attrs))
         attrs.setdefault('expose_value', False)
         attrs.pop('config_file', None)
-        return click.option(*(param_decls or ('-f', '--config-file')), **attrs)(f)
+        return click.option(*(param_decls or ('-c', '--config-file')), **attrs)(f)
     return decorator
